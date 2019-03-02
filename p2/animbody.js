@@ -19,7 +19,7 @@ let counter = 0;
 function draw(){
 	setTimeout(function(){
 		window.requestAnimationFrame(draw);
-	},1000/30);
+	},1000/60);
 	
 	let ctx = canvas.getContext("2d");
 	let image = ctx.createImageData(canvas.width, canvas.height);
@@ -31,7 +31,7 @@ function draw(){
 			value *= 256;
 			let cell = (x + y * canvas.width) * 4;
 			//data[cell] = data[cell + 1] = data[cell + 2] = value*Math.exp(-Math.pow((x-canvas.width/2)/300,2))*Math.exp(-Math.pow((y-canvas.height/2)/300,2));
-			data[cell] = data[cell + 1] = data[cell + 2] = value*mapCenter(x,0,canvas.width,0,1)*mapCenter(y,0,canvas.height,0,1)*0.5*Math.min(counter/(3*30),1);
+			data[cell] = data[cell + 1] = data[cell + 2] = value*mapCenter(x,0,canvas.width,0,1)*mapCenter(y,0,canvas.height,0,1)*0.5*Math.min(counter/(3*60),1);
 			data[cell + 3] = 255; // alpha.
 		}
 	}
