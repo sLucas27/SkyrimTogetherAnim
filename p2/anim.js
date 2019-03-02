@@ -11,8 +11,6 @@ function setup(){
 	window.requestAnimationFrame(draw);
 }
 
-let runsafe = true;
-let stime;
 let counter = 0;
 function draw(){
 	setTimeout(function(){
